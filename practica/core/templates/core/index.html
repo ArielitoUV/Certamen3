@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="page-section clearfix">
+    <div class="container">
+        <div class="intro">
+            <div class="intro-img-container">
+                <img class="intro-img img-fluid mb-3 mb-lg-0 rounded img-with-border" src="{% static 'core/assets/img/atender.jpg' %}"alt="Coffee Introduction" />
+            </div>
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                <h2 class="section-heading mb-4">
+                    <span class="section-heading-upper">Un Dulce Equilibrio</span>
+                    <span class="section-heading-lower">Nothing better than sweet love</span>
+                </h2>
+                <p class="mb-3">"Un poco de chocolate siempre hace que el día sea un poco mejor. Así que, por favor, disfruta de esta delicia y siéntete especial, porque lo eres."</p>
+                <div class="intro-button mx-auto">
+                    <a class="btn btn-primary btn-xl" href="#" id="botonSiguiente">Siguiente</a>
+                  </div>
+                  
+                  <script>
+                  document.getElementById('botonSiguiente').addEventListener('click', function() {
+                    window.location.href = "{% url 'info' %}";
+                  });
+                  </script>
+                              </div>
+        </div>
+        
+        </div>
+    </div>
+</section>
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner bg-faded text-center rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-upper">Endulza la vida</span>
+                        <span class="section-heading-lower">Happiness is sweet</span>
+                    </h2>
+                    <p class="mb-0">"Cada trozo de chocolate es un recordatorio de que la vida está llena de pequeñas alegrías. Hoy, toma un respiro y disfruta de la dulzura que la vida tiene para ofrecer."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

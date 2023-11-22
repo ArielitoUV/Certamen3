@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+<section class="page-section about-heading">
+    <div class="container">
+        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0 img-with-border" src="{% static 'core/assets/img/Paris.jpg' %}" alt="..." />
+        <div class="about-heading-content">
+            <div class="row">
+                <div class="col-xl-9 col-lg-10 mx-auto">
+                    <div class="bg-faded rounded p-5">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper">"Chocolates intensos, recetas sólidas."</span>
+                            <span class="section-heading-lower">About our love delights</span>
+                        </h2>
+                        <p>"Fundada en 2023 por una pareja apasionada, nuestra tienda en línea ha estado compartiendo amor a través de los chocolates más exquisitos, elaborados por talentosos chocolateros de todo el mundo. Nos dedicamos a explorar el planeta en busca de los dulces más encantadores y traerlos a nuestro rincón de amor en el mundo del chocolate. Cada bocado es una muestra de cariño, y cada creación es una historia de dulzura y pasión compartida. Desde los rincones más remotos de América del Sur hasta las tierras de ensueño de Europa, estamos comprometidos a endulzar tu vida con nuestras creaciones de chocolate."</p>
+                        <p class="mb-0">
+                            "Te aseguramos que te enamorarás perdidamente de cada uno de nuestros exquisitos chocolates, dejando que su dulzura acaricie tu corazón y que su sabor se convierta en una deliciosa melodía para tus sentidos."
+                            <em>lust</em>
+                            "Con nuestras irresistibles creaciones, experimentarás la dulzura desde el primer mordisco hasta el último. Acompáñanos en cada capítulo de tu historia, ya sea en una velada romántica, un encuentro con amigos o simplemente en esos momentos de deleite en solitario. Cada momento compartido con nuestros dulces y chocolates es una oportunidad para crear recuerdos que perduran en el corazón."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

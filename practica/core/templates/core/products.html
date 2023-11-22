@@ -1,0 +1,58 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+<section class="page-section">
+    <div class="container">
+        <div class="product-item">
+            <div class="product-item-title d-flex">
+                <div class="bg-faded p-5 d-flex ms-auto rounded">
+                    <h2 class="section-heading mb-0">
+                        <span class="section-heading-upper">Mezcla Perfecta</span>
+                        <span class="section-heading-lower">Chocolate & Love</span>
+                    </h2>
+                </div>
+            </div>
+            <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0 img-with-border" src="{% static 'core/assets/img/istock.jpg' %}" alt="..." />
+            <div class="product-item-description d-flex me-auto">
+                <div class="bg-faded p-5 rounded"><p class="mb-0">"Nos enorgullece profundamente la labor que realizamos, y esta dedicación se refleja en cada uno de nuestros productos. Ya sea deleitándose con nuestro renombrado CHOCOLATE CON LECHE Y AVELLANAS, explorando las sutilezas de nuestro exquisito GRAND CHOCOLAT GARAM MASALA BIO o simplemente disfrutando de un elegante chocolate negro, descubrirá que su satisfacción es nuestra máxima prioridad.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="page-section">
+    <div class="container">
+        <div class="product-item">
+            <div class="product-item-title d-flex">
+                <div class="bg-faded p-5 d-flex me-auto rounded">
+                    <h2 class="section-heading mb-0">
+                        <span class="section-heading-upper">Exquisiteces, una elección insuperable.</span>
+                        <span class="section-heading-lower">Pastry & Mastery</span>
+                    </h2>
+                </div>
+            </div>
+            <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0 img-with-border" src="{% static 'core/assets/img/tipos.jpg' %}" alt="..." />
+            <div class="product-item-description d-flex ms-auto">
+                <div class="bg-faded p-5 rounded"><p class="mb-0">"Cada bocado es un viaje de sabor, elaborado con los ingredientes más finos y los chocolates más exquisitos. Nuestra devoción por lo dulce se refleja en cada producto que creamos, desde tentadores pasteles hasta chocolates premium. Fuentes locales de cacao y colaboraciones con los mejores proveedores de productos especiales garantizan que cada experiencia con nosotros sea una celebración de lo dulce y lo delicioso."</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="page-section">
+    <div class="container">
+        <div class="product-item">
+            <div class="product-item-title d-flex">
+                <div class="bg-faded p-5 d-flex ms-auto rounded">
+                    <h2 class="section-heading mb-0">
+                        <span class="section-heading-upper">De todo el mundo</span>
+                        <span class="section-heading-lower">World of flavor in every corner</span>
+                    </h2>
+                </div>
+            </div>
+            <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0 img-with-border" src="{% static 'core/assets/img/distinto.jpg' %}" alt="..." />
+            <div class="product-item-description d-flex me-auto">
+                <div class="bg-faded p-5 rounded"><p class="mb-0">"Explorar el mundo en busca de los dulces y chocolates de la más alta calidad es una de nuestras pasiones. Cuando nos visitas, siempre encontrarás nuevas creaciones de dulces y chocolates, provenientes de rincones del mundo, especialmente de Europa y Sudamérica. Ofrecemos nuestras deliciosas creaciones en pequeñas cantidades o en grandes cantidades al por mayor. Te invitamos a visitarnos en persona para conocer más detalles y descubrir un mundo de sabores dulces y exquisitos."</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
