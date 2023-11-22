@@ -45,7 +45,7 @@
                 <div class="col-12">
                     <nav aria-label="Page navigation example">
                         <span class="current">
-                            Página {{ productos.number }} de {{ productos.paginator.num_pages }}.
+                            Página {{ productos.number }} de {{ productos.paginator.num_pages }}
                         </span>
                         <ul class="pagination justify-content-center">
                             {% if productos.has_previous %}
@@ -73,14 +73,14 @@
   align-items: center;
   height: 30px;
   width: 100%;
-  max-width: 700px;
+  max-width: 150px;
   border: 1px solid sandybrown;
   text-align: center;
-  margin: 199px auto;
+  margin: 300px auto;
 }
 
 .pagination {
-    height: 30px;
+    height: 10vh;
     margin: -160px 0 20px; /* Ajusta el margen superior e inferior según sea necesario */
     align-items: center;
     justify-content: center;/*centrar*/
@@ -143,11 +143,11 @@
 
     .current {
     position: relative;
-    top: -190px; /* Ajusta la distancia hacia arriba según sea necesario */
+    top: -165px; /* Ajusta la distancia hacia arriba según sea necesario */
     margin-bottom: 10px; /* Ajusta la distancia desde la parte inferior según sea necesario */
     background-color: transparent;
     padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(241, 127, 50, 0.856);
     z-index: 1000;
 }
 
