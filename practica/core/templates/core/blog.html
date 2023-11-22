@@ -27,7 +27,7 @@
                                 <h2 class="section-heading mb-5">
                                     <span class="section-heading-lower">{{ producto.product }}</span>
                                 </h2>
-                                <p><strong>Nombre de Usuario:</strong> {{ producto.username.first_name }} {{ producto.username.last_name }}</p>
+                                <p><strong>Nombre de Usuario:</strong> {{ producto.username.nombre }} {{ producto.username.apellido }}</p>
                                 <p><strong>Nombre de Producto:</strong> {{ producto.product }}</p>
                                 <img src="{{ producto.image.url }}" alt="imagen" class="img-fluid">
                                 <p><strong>Descripción:</strong> {{ producto.text }}</p>

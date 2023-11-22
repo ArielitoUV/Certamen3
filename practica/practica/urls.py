@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from core import  views as core_view
 from blog import views as blog_view
+from django.conf import settings
+
 
 urlpatterns = [
     path('',core_view.index,name="index"),
@@ -25,4 +27,10 @@ urlpatterns = [
     path('blog/',blog_view.blog,name="blog"),
     path('admin/', admin.site.urls),
 ]
+
+
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns +=static(settings.MEDIA_URL,
+                         document_root=settings.MEDIA_ROOT)
 
