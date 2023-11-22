@@ -1,21 +1,29 @@
 from django.db import models
-from django.core.validators import MinValueValidator, MaxValueValidator
 
-class Comment(models.Model):
-    username = models.CharField(max_length=50, verbose_name="Nombre de usuario")
-    text = models.TextField(verbose_name="Comentario sobre el servicio o producto")
-    rating = models.PositiveIntegerField(
-        verbose_name="Calificación",
-        default=1,
-        validators=[MinValueValidator(1), MaxValueValidator(5)]
-    )
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de ingreso del comentario")
-    updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización de los comentarios")
+class Cliente(models.Model):
+    clienteid=models.CharField(primary_key=True,max_length=50,verbose_name='Rut Cliente')
+    nombre=models.CharField(max_length=50, verbose_name="Nombre Cliente")
+    apellido=models.CharField(max_length=50, verbose_name="Apellido Cliente")
 
     class Meta:
-        verbose_name = "Comentario"
-        verbose_name_plural = "Comentarios"
+        verbose_name = "Cliente"
+        verbose_name_plural = "Clientes"
 
     def __str__(self):
-        return self.username
+        return f"{self.nombre} {self.apellido}"
+
+class Producto(models.Model):
+    username = models.ForeignKey(Cliente, on_delete=models.CASCADE, verbose_name='Cliente')
+    product = models.CharField(max_length=50, verbose_name="Nombre de producto")
+    text = models.TextField(verbose_name="Descripción")
+    image = models.ImageField(upload_to="projects", verbose_name="imagen")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Fecha de actualización")
+
+    class Meta:
+        verbose_name = "Producto"
+        verbose_name_plural = "Productos"
+
+    def __str__(self):
+        return f"{self.product}"
 
