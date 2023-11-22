@@ -80,28 +80,32 @@
     </div>
     <style>
 .current {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px; /* Ajusta la altura según sea necesario */
-    width: 110px; /* Ajusta el ancho según sea necesario */
-    border: 1px solid sandybrown; /* Borde con color sandybrown */
-    text-align: center;
-    margin: 140px  599px; /* Centra horizontalmente y ajusta el margen superior según sea necesario */
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 100%;
+  max-width: 700px;
+  border: 1px solid sandybrown;
+  text-align: center;
+  margin: 140px auto;
 }
 
 .pagination {
     height: 30px;
     margin: -160px 0 20px; /* Ajusta el margen superior e inferior según sea necesario */
+    align-items: center;
+    justify-content: center;/*centrar*/
+
 }
 
 .pagination ul {
     border-radius: 3px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     display: inline-block;
-    margin-top: -20px; /* Ajusta el margen superior según sea necesario */
-    margin-left: 440px; /* Puedes ajustar la posición horizontal según sea necesario */
+}
+.pagination li {
+    display: inline;
 }
 .pagination li {
     display: inline;
