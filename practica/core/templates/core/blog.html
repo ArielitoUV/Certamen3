@@ -9,45 +9,162 @@
                         <div class="col-xl-9 col-lg-10 mx-auto">
                             <div class="bg-faded rounded p-5">
                                 <h2 class="section-heading mb-4">
-                                    <span class="section-heading-lower text-center">COMENTARIOS</span>
-                                    <span class="section-heading-upper text-center">SOBRE NUESTRO BLOG</span>
+                                    <span class="section-heading-lower text-center">Sabores Sublimes</span>
+                                    <span class="section-heading-upper text-center">"Un Viaje Sensorial a través de Nuestras Reseñas de Chocolate"</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <ul>
-            {% for c in comentario %}
-                <section class="page-section cta ">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-9 mx-auto">
-                                <div class="cta-inner bg-faded text-center rounded">
-                                    <h2 class="section-heading mb-5">
-                                        <span class="section-heading-lower">{{ c.username }}</span>
-                                        <span class="section-heading-upper"><strong>Calificación:</strong> {{ c.rating }}</span>
-                                    </h2>
-                                    <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
-                                        <li class="list-unstyled-item list-hours-item d-flex">
-                                            </strong> {{ c.text }}
-                                        </li>                                    
-                                    </ul>
-                                    <p class="address mb-5">
-                                        <em>
-                                            <strong>Fecha de Ingreso: {{ c.created_at }}</strong>
-                                        </em>
-                                    </p>
-                                    <p class="mb-0">
-                                        <strong>Fecha de Actualización:</strong> {{ c.updated_at }}
-                                    </p>
-                                </div>
+
+        {% for producto in producto %}
+            <section class="page-section cta">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-9 mx-auto">
+                            <div class="cta-inner bg-faded text-center rounded">
+                                <h2 class="section-heading mb-5">
+                                    <span class="section-heading-lower">{{ producto.product }}</span>
+                                </h2>
+                                <p><strong>Nombre de Usuario:</strong> {{ producto.username.first_name }} {{ producto.username.last_name }}</p>
+                                <p><strong>Nombre de Producto:</strong> {{ producto.product }}</p>
+                                <img src="{{ producto.image.url }}" alt="imagen" class="img-fluid">
+                                <p><strong>Descripción:</strong> {{ producto.text }}</p>
+                                <p><strong>Fecha de Creación:</strong> {{ producto.created_at }}</p>
+                                <p><strong>Fecha de Actualización:</strong> {{ producto.updated_at }}</p>
                             </div>
                         </div>
                     </div>
-                </section>
-            {% endfor %}
-        </ul>
+                </div>
+            </section>
+        {% endfor %}
     </div>
+    <div class="conteiner text-center">
+        <div class="col-60">                        
+            <nav aria-label="Page navigation example">
+                <span class="current">
+                    Page {{ productos.number }} of {{ productos.paginator.num_pages }}.
+                </span>
+              </nav>
+        </div>
+    </div>
+    <div class="pagination">
+        <ul>
+            <li><a href="#" onclick="navigate(-1)">Anterior</a></li>
+            <li><a href="?page=1">1</a></li>
+            <li><a href="?page=2">2</a></li>
+            <li><a href="?page=3">3</a></li>
+            <li><a href="?page=4">4</a></li>
+            <li><a href="?page=5">5</a></li>
+            <li><a href="#" onclick="navigate(1)">Siguiente</a></li>
+        </ul>
+        
+        <script>
+            function navigate(direction) {
+                var currentPage = parseInt(getQueryParam("page")) || 1;
+                var nextPage = currentPage + direction;
+        
+                // Validar que la página siguiente sea mayor que 0
+                if (nextPage > 0) {
+                    window.location.href = "?page=" + nextPage;
+                }
+            }
+        
+            function getQueryParam(name) {
+                var urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(name);
+            }
+        </script>
+        
+    </div>
+    </div>
+    <style>
+.current {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px; /* Ajusta la altura según sea necesario */
+    width: 110px; /* Ajusta el ancho según sea necesario */
+    border: 1px solid sandybrown; /* Borde con color sandybrown */
+    text-align: center;
+    margin: 140px  599px; /* Centra horizontalmente y ajusta el margen superior según sea necesario */
+
+}
+
+.pagination {
+    height: 30px;
+    margin: -160px 0 20px; /* Ajusta el margen superior e inferior según sea necesario */
+}
+
+.pagination ul {
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    margin-top: -20px; /* Ajusta el margen superior según sea necesario */
+    margin-left: 440px; /* Puedes ajustar la posición horizontal según sea necesario */
+}
+.pagination li {
+    display: inline;
+}
+.pagination a {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #DDDDDD;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    float: left;
+    line-height: 34px;
+    padding: 0 14px;
+    text-decoration: none;
+    background-color: #fff; /* Fondo blanco para los enlaces */
+    border-color:sandybrown; /* Borde naranja claro para los enlaces */
+
+}
+.pagination a:hover, .pagination .active a {
+    background-color: #F5F5F5;
+}
+.pagination .active a {
+    color: #999999;
+    cursor: default;
+}
+.pagination .disabled a, .pagination .disabled a:hover {
+    background-color: transparent;
+    color: #999999;
+    cursor: default;
+}
+.pagination li:first-child a {
+    border-left-width: 1px;
+    border-radius: 3px 0 0 3px;
+}
+.pagination li:last-child a {
+    border-radius: 0 3px 3px 0;
+}
+.pagination-centered {
+    text-align: center;
+}
+.pagination-right {
+    text-align: right;
+}
+
+    .current {
+    position: relative;
+    top: -190px; /* Ajusta la distancia hacia arriba según sea necesario */
+    margin-bottom: 10px; /* Ajusta la distancia desde la parte inferior según sea necesario */
+    background-color: transparent;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+    .pagination-buttons {
+        margin-top: 70px; /* Ajusta la distancia entre los botones y el texto "Page X of Y" */
+    }
+</style>
 {% endblock %}
+        
+
         
