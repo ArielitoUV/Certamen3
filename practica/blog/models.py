@@ -14,6 +14,7 @@ class Cliente(models.Model):
 
 class Producto(models.Model):
     username = models.ForeignKey(Cliente, on_delete=models.CASCADE, verbose_name='Cliente')
+    productoid=models.CharField(primary_key=True,max_length=50,verbose_name='Reseña del Producto')
     product = models.CharField(max_length=50, verbose_name="Nombre de producto")
     text = models.TextField(verbose_name="Descripción")
     image = models.ImageField(upload_to="projects", verbose_name="imagen")
@@ -26,4 +27,23 @@ class Producto(models.Model):
 
     def __str__(self):
         return f"{self.product}"
+
+
+class Calificacion(models.Model):
+    username = models.ForeignKey(Producto, on_delete=models.CASCADE, verbose_name='Producto')
+    producto = models.CharField(max_length=50, verbose_name="Nombre de producto")
+    calificacion_estrella = models.IntegerField(
+        default=0,  
+        verbose_name="Calificación Estrella",
+        help_text="Ingrese la calificación estrella del producto (de 1 a 5)."
+    )
+
+    class Meta:
+        verbose_name = "Calificacion"
+        verbose_name_plural = "Calificacion"
+
+    def __str__(self):
+        return f"{self.producto}"
+
+
 

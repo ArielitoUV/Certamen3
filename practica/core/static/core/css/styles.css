@@ -11087,3 +11087,15 @@ p {
   border: 2px solid #e67e22; /* Puedes ajustar el grosor y el color del borde según tus preferencias */
   border-radius: 10px; /* Esto agrega esquinas redondeadas al borde */
 }
+
+.navbar .navbar {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.navbar-nav .nav-item .nav-link {
+color: #000000; /* black text color for navbar items */
+font-size: 19px; /* Adjust the font size as needed */
+margin: 0 20px; /* Adjust the margin to add separation between items */
+}
