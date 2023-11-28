@@ -39,69 +39,61 @@
             </section>
         {% endfor %}
     </div>
-    <div class="conteiner text-center">
-        <div class="col-60">                        
-            <nav aria-label="Page navigation example">
-                <span class="current">
-                    Page {{ productos.number }} of {{ productos.paginator.num_pages }}.
-                </span>
-              </nav>
-        </div>
-    </div>
     <div class="pagination">
-        <ul>
-            <li><a href="#" onclick="navigate(-1)">Anterior</a></li>
-            <li><a href="?page=1">1</a></li>
-            <li><a href="?page=2">2</a></li>
-            <li><a href="?page=3">3</a></li>
-            <li><a href="?page=4">4</a></li>
-            <li><a href="?page=5">5</a></li>
-            <li><a href="#" onclick="navigate(1)">Siguiente</a></li>
-        </ul>
-        
-        <script>
-            function navigate(direction) {
-                var currentPage = parseInt(getQueryParam("page")) || 1;
-                var nextPage = currentPage + direction;
-        
-                // Validar que la página siguiente sea mayor que 0
-                if (nextPage > 0) {
-                    window.location.href = "?page=" + nextPage;
-                }
-            }
-        
-            function getQueryParam(name) {
-                var urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get(name);
-            }
-        </script>
-        
-    </div>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="Page navigation example">
+                        <span class="current">
+                            Página {{ productos.number }} de {{ productos.paginator.num_pages }}
+                        </span>
+                        <ul class="pagination justify-content-center">
+                            {% if productos.has_previous %}
+                                <li class="page-item"><a class="page-link" href="?page={{ productos.previous_page_number }}">Anterior</a></li>
+                            {% endif %}
+       
+                            {% for page in productos.paginator.page_range %}
+                                <li class="page-item{% if page == productos.number %} active{% endif %}">
+                                    <a class="page-link" href="?page={{ page }}">{{ page }}</a>
+                                </li>
+                            {% endfor %}
+       
+                            {% if productos.has_next %}
+                                <li class="page-item"><a class="page-link" href="?page={{ productos.next_page_number }}">Siguiente</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
     </div>
     <style>
 .current {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px; /* Ajusta la altura según sea necesario */
-    width: 110px; /* Ajusta el ancho según sea necesario */
-    border: 1px solid sandybrown; /* Borde con color sandybrown */
-    text-align: center;
-    margin: 140px  599px; /* Centra horizontalmente y ajusta el margen superior según sea necesario */
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 100%;
+  max-width: 150px;
+  border: 1px solid sandybrown;
+  text-align: center;
+  margin: 301px auto;
 }
 
 .pagination {
-    height: 30px;
+    height: 10vh;
     margin: -160px 0 20px; /* Ajusta el margen superior e inferior según sea necesario */
+    align-items: center;
+    justify-content: center;/*centrar*/
+
 }
 
 .pagination ul {
     border-radius: 3px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     display: inline-block;
-    margin-top: -20px; /* Ajusta el margen superior según sea necesario */
-    margin-left: 440px; /* Puedes ajustar la posición horizontal según sea necesario */
+}
+.pagination li {
+    display: inline;
 }
 .pagination li {
     display: inline;
@@ -151,11 +143,11 @@
 
     .current {
     position: relative;
-    top: -190px; /* Ajusta la distancia hacia arriba según sea necesario */
+    top: -165px; /* Ajusta la distancia hacia arriba según sea necesario */
     margin-bottom: 10px; /* Ajusta la distancia desde la parte inferior según sea necesario */
     background-color: transparent;
     padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(241, 127, 50, 0.856);
     z-index: 1000;
 }
 

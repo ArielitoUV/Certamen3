@@ -682,7 +682,7 @@ progress {
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
-  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-top: -100px;
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
@@ -10836,7 +10836,7 @@ textarea.form-control-lg {
   }
 }
 body {
-  background-image: linear-gradient(rgba(47, 23, 15, 0.3), rgba(47, 23, 15, 0.3)), url("../assets/img/fff.jpg");
+  background-image: linear-gradient(rgba(47, 23, 15, 0.3), rgba(47, 23, 15, 0.3)), url("../assets/img/fff.jpeg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -10985,7 +10985,7 @@ p {
 .cta {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: rgba(230, 167, 86, 0.9);
+
 }
 .cta .cta-inner {
   position: relative;
