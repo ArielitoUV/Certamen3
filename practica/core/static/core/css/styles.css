@@ -10991,6 +10991,7 @@ p {
   position: relative;
   padding: 3rem;
   margin: 0.5rem;
+  margin-bottom: 50px;
 }
 .cta .cta-inner:before {
   border-radius: 0.5rem;
@@ -11188,3 +11189,9 @@ margin: 0 20px; /* Adjust the margin to add separation between items */
     .pagination-buttons {
         margin-top: 70px; /* Ajusta la distancia entre los botones y el texto "Page X of Y" */
     }
+
+
+
+
+
+
