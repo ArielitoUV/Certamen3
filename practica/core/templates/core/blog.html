@@ -1,6 +1,7 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block content %}
+<link href="{% static 'core/css/styles.css' %}" rel="stylesheet" />
     <div class="container">
         <section class="page-section about-heading custom-section">
             <div class="container">
@@ -83,96 +84,6 @@
                 </div>
             </div>
     </div>
-
-    <style>
-.current {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30px;
-  width: 100%;
-  max-width: 150px;
-  border: 1px solid sandybrown;
-  text-align: center;
-  margin: 301px auto;
-}
-
-.pagination {
-    height: 10vh;
-    margin: -160px 0 20px; /* Ajusta el margen superior e inferior según sea necesario */
-    align-items: center;
-    justify-content: center;/*centrar*/
-
-}
-
-.pagination ul {
-    border-radius: 3px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    display: inline-block;
-}
-.pagination li {
-    display: inline;
-}
-.pagination li {
-    display: inline;
-}
-.pagination a {
-    -moz-border-bottom-colors: none;
-    -moz-border-image: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    border-color: #DDDDDD;
-    border-style: solid;
-    border-width: 1px 1px 1px 0;
-    float: left;
-    line-height: 34px;
-    padding: 0 14px;
-    text-decoration: none;
-    background-color: #fff; /* Fondo blanco para los enlaces */
-    border-color:sandybrown; /* Borde naranja claro para los enlaces */
-
-}
-.pagination a:hover, .pagination .active a {
-    background-color: #F5F5F5;
-}
-.pagination .active a {
-    color: #999999;
-    cursor: default;
-}
-.pagination .disabled a, .pagination .disabled a:hover {
-    background-color: transparent;
-    color: #999999;
-    cursor: default;
-}
-.pagination li:first-child a {
-    border-left-width: 1px;
-    border-radius: 3px 0 0 3px;
-}
-.pagination li:last-child a {
-    border-radius: 0 3px 3px 0;
-}
-.pagination-centered {
-    text-align: center;
-}
-.pagination-right {
-    text-align: right;
-}
-
-    .current {
-    position: relative;
-    top: -165px; /* Ajusta la distancia hacia arriba según sea necesario */
-    margin-bottom: 10px; /* Ajusta la distancia desde la parte inferior según sea necesario */
-    background-color: transparent;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(241, 127, 50, 0.856);
-    z-index: 1000;
-}
-
-    .pagination-buttons {
-        margin-top: 70px; /* Ajusta la distancia entre los botones y el texto "Page X of Y" */
-    }
-</style>
 {% endblock %}
         
 
