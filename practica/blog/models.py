@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
+
 
 class Cliente(models.Model):
     clienteid=models.CharField(primary_key=True,max_length=50,verbose_name='Rut Cliente')
@@ -32,18 +34,19 @@ class Producto(models.Model):
 class Calificacion(models.Model):
     product= models.ForeignKey(Producto, on_delete=models.CASCADE, verbose_name='Nombre Producto')
     text = models.TextField(verbose_name="Reseña")
-    calificacion_estrella = models.IntegerField(
-        default=0,  
-        verbose_name="Calificación Estrella",
+    calificacion_estrella =models.PositiveIntegerField(
+        verbose_name="Calificación del Producto",
+        default=1,
+        validators=[MinValueValidator(1), MaxValueValidator(5)],
         help_text="Ingrese la calificación estrella del producto (de 1 a 5)."
     )
 
     class Meta:
         verbose_name = "Calificacion"
-        verbose_name_plural = "Calificacion"
+        verbose_name_plural = "Calificaciones"
 
     def __str__(self):
-        return f"{self.producto}"
+        return f"{self.product}"
 
 
 
