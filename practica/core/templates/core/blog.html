@@ -51,8 +51,16 @@
                                 <h2 class="section-heading mb-5">
                                     <span class="section-heading-upper text-center">Calificación de {{ producto.product }}</span>
                                 </h2>
+<<<<<<< HEAD
                                 <p><strong>Reseña:</strong> {{ calificacion.text }}</p>
                                 <p><strong>Calificación Estrella:</strong> {{ calificacion.calificacion_estrella }}</p>
+=======
+                                    <p><strong>Reseña:</strong> {{ calificacion.text }}</p>
+                                    <p><strong>Calificación Estrella:</strong> {{ calificacion.calificacion_estrella }}</p>
+                                    <img class="" src="{% static 'core/assets/img/anonimo.png' %}"alt="" />
+                                
+                                {% endfor %}
+>>>>>>> f14fbb7fbd8661ace37b17691be21eb3618fc991
                             </div>
                         {% empty %}
                             <div class="cta-inner bg-faded text-center rounded">
