@@ -53,8 +53,7 @@
                                 <h6 class="section-heading mb-5">
                                     <span class="text-center">Usuario Anonimo</span>
                                 </h6>
-                                <img class="intro-img img-fluid mb-3 mb-lg-0 rounded img-with-border" src="{% static 'core/assets/img/anonimo.png' %}"alt="Coffee Introduction" />
-                                <p><strong>Reseña:</strong> {{ calificacion.text }}</p>
+                                <img class="anonimo" src="{% static 'core/assets/img/anonimo.png' %}" alt="Coffee Introduction" width="130" />                                <p><strong>Reseña:</strong> {{ calificacion.text }}</p>
                                 <p><strong>Calificación Estrella:</strong> {{ calificacion.calificacion_estrella }}</p>
                             </div>
                         {% empty %}
