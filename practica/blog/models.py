@@ -14,8 +14,8 @@ class Cliente(models.Model):
 
 class Producto(models.Model):
     username = models.ForeignKey(Cliente, on_delete=models.CASCADE, verbose_name='Cliente')
-    productoid=models.CharField(primary_key=True,max_length=50,verbose_name='Reseña del Producto')
     product = models.CharField(max_length=50, verbose_name="Nombre de producto")
+    productoid=models.CharField(primary_key=True,max_length=50,verbose_name='ID Producto')
     text = models.TextField(verbose_name="Descripción")
     image = models.ImageField(upload_to="projects", verbose_name="imagen")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de creación")
@@ -30,8 +30,8 @@ class Producto(models.Model):
 
 
 class Calificacion(models.Model):
-    username = models.ForeignKey(Producto, on_delete=models.CASCADE, verbose_name='Producto')
-    producto = models.CharField(max_length=50, verbose_name="Nombre de producto")
+    product= models.ForeignKey(Producto, on_delete=models.CASCADE, verbose_name='Nombre Producto')
+    text = models.TextField(verbose_name="Reseña")
     calificacion_estrella = models.IntegerField(
         default=0,  
         verbose_name="Calificación Estrella",
